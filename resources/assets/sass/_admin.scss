@@ -1,0 +1,38 @@
+#admin {
+	padding: 100px 0;
+
+	.panel-heading {
+		background-color: #424242;
+		color: white;
+		text-transform: uppercase;
+
+	}/*panel-heading*/
+
+	.panel {
+		border: none;
+		background: lightgray;
+		color: #424242;
+		font-size: 2rem;
+	}
+
+	.onboard {
+		float: right;
+	}
+
+	.see-dashboard-mobile {
+		display: none;
+	}
+
+	@media (max-width: 500px) {
+		width: 90%;
+		margin: 0 auto;
+		padding: 25px 0;
+
+		.see-dashboard {
+			display: none;
+		}
+		.see-dashboard-mobile {
+			display: block;
+		}
+	}/*500px*/
+}/*admin*/

@@ -1,0 +1,75 @@
+// @include breakpoint(phone); 
+@mixin breakpoint($point) {  
+  @if $point == fullscreen {
+    @media (max-width: 1500px) { @content; }
+  }
+  @else if $point == laptop {
+    @media (max-width: 1100px) { @content; }
+  }
+  @else if $point == tablet {
+    @media (max-width: 970px) { @content; }
+  }
+  @else if $point == nav {
+    @media (max-width: 660px) { @content; }
+  }
+  @else if $point == phone {
+    @media (max-width: 480px)  { @content; }
+  }
+}
+// @include border-radius(4px); 
+@mixin border-radius($radius) { 
+  -webkit-border-radius: $radius; 
+  -moz-border-radius: $radius; 
+  -ms-border-radius: $radius; 
+  border-radius: $radius; 
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Usage: @include center() - centers vertically and horizontally
+//        @include center(vert) - centers vertically
+//        @include center(horiz) - centers horizontally
+@mixin center($which:both) { // vert or horiz 
+  position:absolute;
+  @if $which == vert {
+      top:50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+  }
+  @else if $which == horiz {
+    left:50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  @else{
+    left:50%;
+    top:50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+}

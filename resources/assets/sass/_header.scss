@@ -1,0 +1,27 @@
+#header {
+	height: 100px;
+	padding: 20px 0;
+	background: white;
+	border: none;
+
+	#logo {
+		width: 165px;
+
+	}/*logo*/
+
+	@media (max-width: 500px) {
+		#logo {
+			width: 100%;
+			
+		}/*logo*/
+		.navbar-brand {
+			width: 70%;
+		}/*navbar-brand*/
+
+		.dropdown {
+			display: block;
+			z-index: 1000;
+			background: white;
+		}
+	}/*500px*/
+}/*header*/

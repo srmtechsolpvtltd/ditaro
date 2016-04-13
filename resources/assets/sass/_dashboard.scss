@@ -1,0 +1,86 @@
+#dashboard {
+	padding: 50px 0;
+	
+	.panel-heading {
+		background-color: #424242;
+		color: white;
+		text-transform: uppercase;
+		font-size: 2.5rem;
+
+	}/*panel-heading*/
+
+	.panel {
+		border: none;
+		background: lightgray;
+		color: #424242;
+		font-size: 1.7rem;
+	}
+
+	.faq-title {
+		padding: 25px 0;
+	}
+
+	#property-table_wrapper {
+		margin: 25px 0 0;
+	}/*property-table_wrapper*/
+
+	.stat-section {
+
+		p {
+			display: inline;
+			padding: 0 15px;
+			font-weight: bold;
+		}/*p*/
+	}/*stat-section*/
+
+	tr {
+		background: white;
+		font-size: 1.4rem;
+		color: #424242;
+	}/*tr*/
+
+	#property-table {
+		border-bottom: none;
+	}/*property-table*/
+
+	.table-name {
+		width: 20%;
+	}/*table-name*/
+
+	.table-phone {
+		width: 15%;
+	}/*table-phone*/
+
+	.table-enroll {
+		width: 8%;
+	}/*table-enroll*/
+
+	.table-status {
+		width: 8%;
+	}/*table-status*/
+
+	th {
+		font-size: 1.4rem;
+		color: #424242;
+		margin: 0 0 0 2%;
+		
+	}/*th*/
+
+	.btn-info {
+		background-color: #1f5ba5;
+		border: none;
+	}
+
+	input {
+		border: 1px solid light-gray;
+	}/*input*/
+
+	.table-status {
+		font-size: 1rem;
+		
+	}/*table-status*/
+
+	@media (max-width: 500px) {
+		padding: 25px;
+	}/*500px*/
+}/*dashboard*/

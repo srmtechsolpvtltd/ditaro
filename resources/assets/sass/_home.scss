@@ -1,0 +1,23 @@
+#home {
+	padding: 100px 0;
+
+	.panel-heading {
+		background-color: #424242;
+		color: white;
+		text-transform: uppercase;
+
+	}/*panel-heading*/
+
+	.panel {
+		border: none;
+		background: lightgray;
+		color: #424242;
+		font-size: 2rem;
+	}
+
+	@media (max-width: 500px) {
+		padding: 25px 0;
+		width: 90%;
+		margin: 0 auto;
+	}/*500px*/
+}/*home*/
