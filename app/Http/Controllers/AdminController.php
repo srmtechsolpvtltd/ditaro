@@ -16,7 +16,7 @@ use Carbon\Carbon;
 use Excel;
 use Auth;
 use URL;
-use Mail;
+//use Mail;
 class AdminController extends Controller
 {
     /**
@@ -280,15 +280,27 @@ class AdminController extends Controller
         $note->user_id = $user->id;
         $note->save();
         
-		$data = array(
+        $data = array(
         'name' => $user->name,
         'email' => $user->email,
         'property_name' => $property[0]->name,
         'resident_name' => $resident[0]->name
 		);
+        /**		
 		Mail::send('emails.notes', $data, function ($message) use ($data) {
 			$message->to(env('ADMIN_EMAIL'))->subject('Notes added by '.$data['name']);
-		});
+		});**/
+		$to = "ashish.kumar@srmtechsol.com";
+		$subject = "Notes added by ".$data['name'];
+		$msg = "A note added by ".$data['name']." for resident ".$data['resident_name']." in property ".$data['resident_name']."<br/><br/>
+		
+		Regards <br/>
+		Support
+		 ";		
+		$headers = 'MIME-Version: 1.0' . "\r\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		$headers .= 'From: Ditaro.com <adminp@ditaro.com>' . "\r\n";
+		@mail($to,$subject,$msg,$headers);
         return redirect()->route('adminproperty', [$property_id]);
     }
    
